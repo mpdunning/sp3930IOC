@@ -1,0 +1,75 @@
+
+record( stringin, "$(P):SI:IOCNAME") {
+  field( PINI, "YES")
+  field( VAL,  "$(IOCNAME)")
+}
+
+record( stringin, "$(P):IDN"){
+  field( DESC, "SCPI ID String")
+  field( DTYP, "stream")
+  field( INP,  "@sp3930.proto idn $(L) $(A)")
+  field( PINI, "YES")
+}
+
+record( stringin, "$(P):ERROR"){
+  field( DESC, "Error String")
+  field( DTYP, "stream")
+  field( SCAN, "5 second")
+  field( INP,  "@sp3930.proto getError $(L) $(A)")
+  field( PINI, "YES")
+}
+
+record(bi,"$(P):BI:LOOP"){
+  field( DESC, "Loop Status")
+  field( DTYP, "stream")
+  field( SCAN, "5 second")
+  field( INP,  "@sp3930.proto getLoopStatus $(L) $(A)")
+  field( ZNAM, "Off")
+  field( ONAM, "On")
+  field( PINI, "YES")
+}
+
+record(ai,"$(P):AI:LOOP:AC"){
+  field( DESC, "Loop AC Voltage")
+  field( DTYP, "stream")
+  field( SCAN, "2 second")
+  field( INP,  "@sp3930.proto getLoopAC $(L) $(A)")
+  field( PREC, "0")
+  field( PINI, "YES")
+}
+
+record(ai,"$(P):AI:LOOP:DC"){
+  field( DESC, "Loop DC Voltage")
+  field( DTYP, "stream")
+  field( SCAN, "2 second")
+  field( INP,  "@sp3930.proto getLoopDC $(L) $(A)")
+  field( PREC, "0")
+  field( PINI, "YES")
+}
+
+record(ai,"$(P):AI:PZT:AC"){
+  field( DESC, "PZT AC Voltage")
+  field( DTYP, "stream")
+  field( SCAN, "2 second")
+  field( INP,  "@sp3930.proto getPZTAC $(L) $(A)")
+  field( PREC, "0")
+  field( PINI, "YES")
+}
+
+record(ai,"$(P):AI:PZT:DC"){
+  field( DESC, "PZT DC Voltage")
+  field( DTYP, "stream")
+  field( SCAN, "2 second")
+  field( INP,  "@sp3930.proto getPZTDC $(L) $(A)")
+  field( PREC, "0")
+  field( PINI, "YES")
+}
+
+record(longin,"$(P):LI:DELAY"){
+  field( DESC, "Timing Delay")
+  field( DTYP, "stream")
+  field( SCAN, "10 second")
+  field( INP,  "@sp3930.proto getDelay $(L) $(A)")
+  field( PINI, "YES")
+}
+

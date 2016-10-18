@@ -1,0 +1,16 @@
+
+InTerminator=LF;
+OutTerminator=LF;
+ExtraInput=Ignore;
+ReplyTimeout=3000;
+ReadTimeout=2000;
+
+idn           { out "*IDN?"             ;in "%40c"        ; }
+getLoopStatus { out "SOUR:LOOP?"        ;in "%{0|1}"      ; }
+getLoopAC     { out "SOUR:LMON:AC?"     ;in "%f"          ; }
+getLoopDC     { out "SOUR:LMON:DC?"     ;in "%f"          ; }
+getPZTAC      { out "SOUR:PZT:AC?"      ;in "%f"          ; }
+getPZTDC      { out "SOUR:PZT:DC?"      ;in "%f"          ; }
+getDelay      { out "SOUR:DLY?"         ;in "%i"          ; }
+getError      { out "SYST:ERR?"         ;in "%40c"        ; }
+
